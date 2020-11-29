@@ -8,7 +8,7 @@ function HeaderLoggedOut(props) {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const response = await Axios.post("http://localhost:8080/login", {
+      const response = await Axios.post("/login", {
         username,
         password,
       });
@@ -19,6 +19,7 @@ function HeaderLoggedOut(props) {
         localStorage.setItem("complexAppToken", response.data.token);
         localStorage.setItem("complexAppUsername", response.data.username);
         localStorage.setItem("complexAppAvatar", response.data.avatar);
+        props.setUser(response.data.username);
       } else {
         console.log("Incorrect Username / Password");
       }

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function HeaderLoggedIn(props) {
   function handleLogout() {
@@ -6,6 +7,7 @@ function HeaderLoggedIn(props) {
     localStorage.removeItem("complexAppToken");
     localStorage.removeItem("complexAppUsername");
     localStorage.removeItem("complexAppAvatar");
+    props.setUser("");
   }
   return (
     <div className="flex-row my-3 my-md-0">
@@ -22,9 +24,9 @@ function HeaderLoggedIn(props) {
           src={localStorage.getItem("complexAppAvatar")}
         />
       </a>
-      <a className="btn btn-sm btn-success mr-2" href="/create-post">
+      <Link className="btn btn-sm btn-success mr-2" to="/create-post">
         Create Post
-      </a>
+      </Link>
       <button onClick={handleLogout} className="btn btn-sm btn-secondary">
         Sign Out
       </button>

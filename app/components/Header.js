@@ -14,9 +14,15 @@ function Header(props) {
           </Link>
         </h4>
         {props.loggedIn ? (
-          <HeaderLoggedIn setLoggedIn={props.setLoggedIn} />
+          <HeaderLoggedIn
+            setUser={props.setUser}
+            setLoggedIn={props.setLoggedIn}
+          />
         ) : (
-          <HeaderLoggedOut setLoggedIn={props.setLoggedIn} />
+          <HeaderLoggedOut
+            setUser={props.setUser}
+            setLoggedIn={props.setLoggedIn}
+          />
         )}
       </div>
     </header>

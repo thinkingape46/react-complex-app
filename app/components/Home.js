@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Page from "./Page";
 
-function Home() {
+function Home(props) {
   return (
     <Page title="Your Feed">
       <h2 className="text-center">
